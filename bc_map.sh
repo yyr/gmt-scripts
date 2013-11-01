@@ -4,12 +4,12 @@ AWK=awk
 ps=ps/map.ps
 in=data/gmt-1.txt
 
-azimuth="-E210/20"
-lats="-R70/90/0/35"
+azimuth="-E200/40"
+lats="-R65/95/0/35"
 
 pscoast -Rd -Dh $lats -JX7id/7id -Dh -Gchocolate $azimuth -K  > $ps
 
-psxyz $in ${lats}/1/150  -J -JZ2.5i -So0.1ib1 -Ggray -Wthinner \
+psxyz $in ${lats}/1/160  -J -JZ2.5i -So0.1ib1 -Ggray -Wthinner \
 	-B10g10/10g10/a20:"dust":WSneZ -O -K $azimuth >> $ps
 
 # $AWK '{print $1, $2, 20, 0, 0, "RM", $3}' $in \
